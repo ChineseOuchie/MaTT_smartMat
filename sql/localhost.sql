@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Feb 26, 2018 at 03:34 PM
+-- Generation Time: Feb 26, 2018 at 03:46 PM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.8
 
@@ -48,6 +48,18 @@ CREATE TABLE `danceclasses` (
   `streetDance` varchar(30) NOT NULL,
   `balletDance` varchar(30) NOT NULL,
   `salsaDance` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE `images` (
+  `idimages` int(11) NOT NULL,
+  `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -105,6 +117,12 @@ ALTER TABLE `danceclasses`
   ADD PRIMARY KEY (`iddanceclasses`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`idimages`);
+
+--
 -- Indexes for table `userprofile`
 --
 ALTER TABLE `userprofile`
@@ -130,6 +148,11 @@ ALTER TABLE `achievements`
 --
 ALTER TABLE `danceclasses`
   MODIFY `iddanceclasses` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `idimages` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `userprofile`
 --
