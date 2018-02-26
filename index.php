@@ -1,11 +1,16 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
     $conn = new mysqli("localhost", "root", "root", "matt");
+
     $sql = "SELECT * FROM userprofile";
     $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
+    $r = '';
     while ($row = $result->fetch_assoc()){
-        echo $row['firstname'];
+        $r .= $row['firstname'];
     }
+    echo $r;
 ?>
 
 <!doctype html>
