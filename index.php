@@ -15,7 +15,13 @@ ini_set('display_errors', 1);
         $r .= "Your current weight is {$row['weight']}kg <br>";
         $r .= "Your have {$row['score']} points <br>";
     }
-    echo $r;
+
+    $sqlimage = "SELECT * FROM images";
+    $resultimage = $conn->query($sqlimage);
+    $rimage = "";
+    while ($rowimage = $resultimage->fetch_assoc()){
+        $rimage .= "<img class='profileImage' src='img/{$rowimage['image']}.png' alt='profile image'> <br>";
+    }
 ?>
 
 <!doctype html>
@@ -31,7 +37,16 @@ ini_set('display_errors', 1);
 </head>
 <body>
     <div id="container">
-
+        <form action="index.php" method="post">
+            <input type="hidden" name="size" value="1000000">
+            <input type="file" name="image">
+            <input type="submit" name="upload" value="Upload Image">
+        </form>
+        <br>
+        <?php
+            echo $rimage;
+            echo $r;
+        ?>
     </div>
 </body>
 </html>

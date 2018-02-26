@@ -46,3 +46,7 @@ table {
 *{
     box-sizing: border-box;
 }
+.profileImage{
+    width: 100px;
+    border-radius: 50%;
+}
