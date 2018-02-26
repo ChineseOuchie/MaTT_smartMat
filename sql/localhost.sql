@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Feb 26, 2018 at 02:33 PM
+-- Generation Time: Feb 26, 2018 at 02:38 PM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.8
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `matt`
 --
+CREATE DATABASE IF NOT EXISTS `matt` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `matt`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `achievements`
 --
 
+DROP TABLE IF EXISTS `achievements`;
 CREATE TABLE `achievements` (
   `idachievements` int(11) NOT NULL,
   `firstExercise` varchar(30) NOT NULL,
@@ -39,6 +42,7 @@ CREATE TABLE `achievements` (
 -- Table structure for table `danceclasses`
 --
 
+DROP TABLE IF EXISTS `danceclasses`;
 CREATE TABLE `danceclasses` (
   `iddanceclasses` int(11) NOT NULL,
   `streetDance` varchar(30) NOT NULL,
@@ -52,6 +56,7 @@ CREATE TABLE `danceclasses` (
 -- Table structure for table `userprofile`
 --
 
+DROP TABLE IF EXISTS `userprofile`;
 CREATE TABLE `userprofile` (
   `iduserprofile` int(11) NOT NULL,
   `firstname` varchar(30) NOT NULL,
@@ -74,6 +79,7 @@ INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `infix`, `sirname`, `ag
 -- Table structure for table `yogaclasses`
 --
 
+DROP TABLE IF EXISTS `yogaclasses`;
 CREATE TABLE `yogaclasses` (
   `idyogaclasses` int(11) NOT NULL,
   `essentialsYoga` varchar(30) NOT NULL,
