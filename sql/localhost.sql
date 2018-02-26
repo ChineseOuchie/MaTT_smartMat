@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Feb 26, 2018 at 03:46 PM
+-- Generation Time: Feb 26, 2018 at 04:19 PM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.8
 
@@ -60,7 +60,14 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `idimages` int(11) NOT NULL,
   `image` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`idimages`, `image`) VALUES
+(1, 'placeholder');
 
 -- --------------------------------------------------------
 
@@ -152,7 +159,7 @@ ALTER TABLE `danceclasses`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `idimages` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idimages` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `userprofile`
 --
