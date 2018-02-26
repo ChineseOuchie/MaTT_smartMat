@@ -12,8 +12,8 @@ ini_set('display_errors', 1);
         $r .= " {$row['infix']} ";
         $r .= "{$row['sirname']} <br>";
         $r .= "Your age is {$row['age']} <br>";
-        $r .= "Your current weight is{$row['weight']} <br>";
-        $r .= "Your score is {$row['score']} <br>";
+        $r .= "Your current weight is {$row['weight']}kg <br>";
+        $r .= "Your have {$row['score']} points <br>";
     }
     echo $r;
 ?>
