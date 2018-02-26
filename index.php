@@ -8,7 +8,12 @@ ini_set('display_errors', 1);
     $result = $conn->query($sql);
     $r = '';
     while ($row = $result->fetch_assoc()){
-        $r .= $row['firstname'];
+        $r .= "Your name is {$row['firstname']} ";
+        $r .= " {$row['infix']} ";
+        $r .= "{$row['sirname']} <br>";
+        $r .= "Your age is {$row['age']} <br>";
+        $r .= "Your current weight is{$row['weight']} <br>";
+        $r .= "Your score is {$row['score']} <br>";
     }
     echo $r;
 ?>

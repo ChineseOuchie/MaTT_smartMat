@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Feb 26, 2018 at 02:38 PM
+-- Generation Time: Feb 26, 2018 at 03:24 PM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.8
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `matt`
 --
-CREATE DATABASE IF NOT EXISTS `matt` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `matt`;
 
 -- --------------------------------------------------------
 
@@ -63,15 +61,16 @@ CREATE TABLE `userprofile` (
   `infix` varchar(15) DEFAULT NULL,
   `sirname` varchar(30) NOT NULL,
   `age` int(11) NOT NULL,
-  `weight` int(11) NOT NULL
+  `weight` int(11) NOT NULL,
+  `score` int(30) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userprofile`
 --
 
-INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `infix`, `sirname`, `age`, `weight`) VALUES
-(1, 'test', NULL, 'account', 69, 69);
+INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `infix`, `sirname`, `age`, `weight`, `score`) VALUES
+(1, 'Yoga', NULL, 'Matt', 26, 72, 1870);
 
 -- --------------------------------------------------------
 
