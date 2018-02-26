@@ -1,3 +1,13 @@
+<?php
+    $conn = new mysqli("localhost", "root", "root", "matt");
+    $sql = "SELECT * FROM userprofile";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    while ($row = $result->fetch_assoc()){
+        echo $row['firstname'];
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
