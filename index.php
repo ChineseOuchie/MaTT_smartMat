@@ -37,16 +37,18 @@ ini_set('display_errors', 1);
 </head>
 <body>
     <div id="container">
-        <form action="index.php" method="post">
-            <input type="hidden" name="size" value="1000000">
-            <input type="file" name="image">
-            <input type="submit" name="upload" value="Upload Image">
-        </form>
-        <br>
-        <?php
+        <div id="Profile-Information">
+            <form action="index.php" method="post">
+                <input type="hidden" name="size" value="1000000">
+                <input type="file" name="image">
+                <input type="submit" name="upload" value="Upload Image">
+            </form>
+            <br>
+            <?php
             echo $rimage;
             echo $r;
-        ?>
+            ?>
+        </div>
     </div>
 </body>
 </html>
