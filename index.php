@@ -2,13 +2,14 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+    session_start();
     $conn = new mysqli("localhost", "root", "root", "matt");
 
     $sql = "SELECT * FROM userprofile";
     $result = $conn->query($sql);
     $r = '';
     while ($row = $result->fetch_assoc()){
-        $r .= "Your name is {$row['firstname']} ";
+        $r .= $_SESSION['login_user'];
         $r .= " {$row['infix']} ";
         $r .= "{$row['sirname']} <br>";
         $r .= "Your age is {$row['age']} <br>";
@@ -16,12 +17,17 @@ ini_set('display_errors', 1);
         $r .= "Your have {$row['score']} points <br>";
     }
 
-    $sqlimage = "SELECT * FROM images";
+    $sqlimage = "SELECT image FROM userprofile";
     $resultimage = $conn->query($sqlimage);
     $rimage = "";
     while ($rowimage = $resultimage->fetch_assoc()){
-        $rimage .= "<img class='profileImage' src='img/{$rowimage['image']}.png' alt='profile image'> <br>";
+        if ($rowimage['image'] === null){
+            $rimage .= "<img class='profileImage' src='img/placeholder.png' alt='profile image'> <br>";
+        } else{
+            $rimage .= "<img class='profileImage' src='img/{$rowimage['image']}.png' alt='profile image'> <br>";
+        }
     }
+
 ?>
 
 <!doctype html>
@@ -45,9 +51,12 @@ ini_set('display_errors', 1);
             </form>
             <br>
             <?php
-            echo $rimage;
-            echo $r;
+                echo $rimage;
+                echo $r;
             ?>
+            <form action="pages/logout.php">
+                <input type="submit" name="logout">
+            </form>
         </div>
     </div>
 </body>
