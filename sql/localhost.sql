@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Feb 26, 2018 at 04:19 PM
+-- Generation Time: Mar 05, 2018 at 04:20 PM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.8
 
@@ -25,49 +25,27 @@ USE `matt`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `achievements`
+-- Table structure for table `loginGebruiker`
 --
 
-DROP TABLE IF EXISTS `achievements`;
-CREATE TABLE `achievements` (
-  `idachievements` int(11) NOT NULL,
-  `firstExercise` varchar(30) NOT NULL,
-  `firstFinish` varchar(30) NOT NULL,
-  `touchZen` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `loginGebruiker`;
+CREATE TABLE `loginGebruiker` (
+  `idloginGebruiker` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- Table structure for table `danceclasses`
+-- Dumping data for table `loginGebruiker`
 --
 
-DROP TABLE IF EXISTS `danceclasses`;
-CREATE TABLE `danceclasses` (
-  `iddanceclasses` int(11) NOT NULL,
-  `streetDance` varchar(30) NOT NULL,
-  `balletDance` varchar(30) NOT NULL,
-  `salsaDance` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `images`
---
-
-DROP TABLE IF EXISTS `images`;
-CREATE TABLE `images` (
-  `idimages` int(11) NOT NULL,
-  `image` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`idimages`, `image`) VALUES
-(1, 'placeholder');
+INSERT INTO `loginGebruiker` (`idloginGebruiker`, `username`, `password`, `email`) VALUES
+(4, 'Yoga', 'KAAS', 'yoga@matt.nl'),
+(5, 'kaas', 'yoga', 'kaas@yoga.com'),
+(7, 'adn', 'kaasjes123', 'adn@crossbowjoey.nl'),
+(8, 'adn', 'kaasjes123', 'adn@crossbowjoey.nl'),
+(9, 'yogamatt420', 'kipjes123', 'yoga@matt.nl');
 
 -- --------------------------------------------------------
 
@@ -78,56 +56,41 @@ INSERT INTO `images` (`idimages`, `image`) VALUES
 DROP TABLE IF EXISTS `userprofile`;
 CREATE TABLE `userprofile` (
   `iduserprofile` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `infix` varchar(15) DEFAULT NULL,
   `sirname` varchar(30) NOT NULL,
   `age` int(11) NOT NULL,
   `weight` int(11) NOT NULL,
-  `score` int(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `score` int(30) NOT NULL,
+  `achFirstExercise` int(30) NOT NULL,
+  `achFirstFinish` int(30) NOT NULL,
+  `achTouchZen` int(30) NOT NULL,
+  `danBallet` int(30) NOT NULL,
+  `danSalsa` int(30) NOT NULL,
+  `danStreet` int(30) NOT NULL,
+  `yogaEssentials` int(30) NOT NULL,
+  `yogaHalfmoon` int(30) NOT NULL,
+  `yogaHatha` int(30) NOT NULL,
+  `image` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userprofile`
 --
 
-INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `infix`, `sirname`, `age`, `weight`, `score`) VALUES
-(1, 'Yoga', NULL, 'Matt', 26, 72, 1870);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `yogaclasses`
---
-
-DROP TABLE IF EXISTS `yogaclasses`;
-CREATE TABLE `yogaclasses` (
-  `idyogaclasses` int(11) NOT NULL,
-  `essentialsYoga` varchar(30) NOT NULL,
-  `hathaYoga` varchar(30) NOT NULL,
-  `halfmoonYoga` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `userprofile` (`iduserprofile`, `username`, `firstname`, `infix`, `sirname`, `age`, `weight`, `score`, `achFirstExercise`, `achFirstFinish`, `achTouchZen`, `danBallet`, `danSalsa`, `danStreet`, `yogaEssentials`, `yogaHalfmoon`, `yogaHatha`, `image`) VALUES
+(6, 'yogamatt420', 'Yoga', '', 'Matt', 26, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `achievements`
+-- Indexes for table `loginGebruiker`
 --
-ALTER TABLE `achievements`
-  ADD PRIMARY KEY (`idachievements`);
-
---
--- Indexes for table `danceclasses`
---
-ALTER TABLE `danceclasses`
-  ADD PRIMARY KEY (`iddanceclasses`);
-
---
--- Indexes for table `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`idimages`);
+ALTER TABLE `loginGebruiker`
+  ADD PRIMARY KEY (`idloginGebruiker`);
 
 --
 -- Indexes for table `userprofile`
@@ -136,40 +99,19 @@ ALTER TABLE `userprofile`
   ADD PRIMARY KEY (`iduserprofile`);
 
 --
--- Indexes for table `yogaclasses`
---
-ALTER TABLE `yogaclasses`
-  ADD PRIMARY KEY (`idyogaclasses`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `achievements`
+-- AUTO_INCREMENT for table `loginGebruiker`
 --
-ALTER TABLE `achievements`
-  MODIFY `idachievements` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `danceclasses`
---
-ALTER TABLE `danceclasses`
-  MODIFY `iddanceclasses` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `images`
---
-ALTER TABLE `images`
-  MODIFY `idimages` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+ALTER TABLE `loginGebruiker`
+  MODIFY `idloginGebruiker` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `userprofile`
 --
 ALTER TABLE `userprofile`
-  MODIFY `iduserprofile` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `yogaclasses`
---
-ALTER TABLE `yogaclasses`
-  MODIFY `idyogaclasses` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `iduserprofile` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
