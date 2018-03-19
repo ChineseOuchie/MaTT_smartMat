@@ -43,5 +43,6 @@
         <input id="password" type="password" name="password">
         <input type="submit" name="submit">
     </form>
+    <a href="register.php">Register</a>
 </body>
 </html>

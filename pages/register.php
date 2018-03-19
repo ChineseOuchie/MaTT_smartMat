@@ -19,7 +19,7 @@
 
             if ($password === $rePassword) {
                 $sql = "INSERT INTO loginGebruiker (username, password, email) VALUES ('$username', '$password', '$email');";
-                $sqluserprofile = "INSERT INTO userprofile (username, firstname, infix, sirname, age, weight) VALUES ('$username', '$firstname', '$infix', '$sirname', '$age', '$weight');";
+                $sqluserprofile = "INSERT INTO userprofile (username, firstname, sirname, age, weight) VALUES ('$username', '$firstname', '$sirname', '$age', '$weight');";
                 $conn->query($sqluserprofile);
                 $conn->query($sql);
             } else {
@@ -46,8 +46,6 @@
     <form method="post">
         <label for="firstname">Firstname</label>
         <input id="firstname" type="text" name="firstname" required>
-        <label for="infix">Infix</label>
-        <input id="infix" type="text" name="infix">
         <label for="sirname">Sirname</label>
         <input id="sirname" type="text" name="sirname" required>
         <label for="age">Age</label>
