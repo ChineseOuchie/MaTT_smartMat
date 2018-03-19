@@ -11,7 +11,7 @@ ini_set('display_errors', 1);
         $array = ['png','jpg','jpeg'];
         $r = '';
         while ($row = $result->fetch_assoc()){
-            $r .= " {$row['firstname']}";
+            $r .= " {$row['firstname']} ";
             $r .= "{$row['sirname']} <br>";
             $r .= "Your age is {$row['age']} <br>";
             $r .= "Your current weight is {$row['weight']}kg <br>";
