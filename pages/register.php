@@ -1,13 +1,12 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-
+    $msg = "";
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn = new mysqli("localhost", "root", "root", "matt");
 
         if (isset($_POST['submit'])) {
             $firstname = $_POST['firstname'];
-            $infix = $_POST['infix'];
             $sirname = $_POST['sirname'];
             $age = $_POST['age'];
             $weight = $_POST['weight'];
@@ -15,7 +14,7 @@
             $password = $_POST['password'];
             $rePassword = $_POST['rePassword'];
             $email = $_POST['email'];
-            $msg = "";
+
 
             if ($password === $rePassword) {
                 $sql = "INSERT INTO loginGebruiker (username, password, email) VALUES ('$username', '$password', '$email');";
@@ -23,7 +22,7 @@
                 $conn->query($sqluserprofile);
                 $conn->query($sql);
             } else {
-                $msg .= "Password does not match the confirm password.";
+                $msg = "Password does not match the confirm password.";
             }
         }
     }
@@ -58,7 +57,7 @@
         <input id="password" type="password" name="password" required>
         <label for="rePassword">Confirm password</label>
         <input id="rePassword" type="password" name="rePassword" required>
-        <?php echo $msg ?>
+        <?php echo $msg?>
         <label for="email">E-mail</label>
         <input id="email" type="email" name="email">
         <input type="submit" name="submit">

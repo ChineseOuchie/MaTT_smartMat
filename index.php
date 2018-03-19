@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
             $r .= "{$row['sirname']} <br>";
             $r .= "Your age is {$row['age']} <br>";
             $r .= "Your current weight is {$row['weight']}kg <br>";
-            $r .= "Your have {$row['score']} points <br>";
+            $r .= "You have {$row['score']} points <br>";
         }
 
         if (isset($_POST['upload'])){
