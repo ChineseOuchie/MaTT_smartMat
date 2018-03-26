@@ -5,7 +5,6 @@
     session_start();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn = new mysqli("localhost", "root", "root", "matt");
-
         if (isset($_POST['submit'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];

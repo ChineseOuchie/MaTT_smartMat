@@ -15,7 +15,6 @@
             $rePassword = $_POST['rePassword'];
             $email = $_POST['email'];
 
-
             if ($password === $rePassword) {
                 $sql = "INSERT INTO loginGebruiker (username, password, email) VALUES ('$username', '$password', '$email');";
                 $sqluserprofile = "INSERT INTO userprofile (username, firstname, sirname, age, weight) VALUES ('$username', '$firstname', '$sirname', '$age', '$weight');";

@@ -1,15 +1,14 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     session_start();
     if (isset($_SESSION['login_user'])){
         $conn = new mysqli("localhost", "root", "root", "matt");
-
         $sql = "SELECT * FROM userprofile WHERE username = '{$_SESSION['login_user']}';";
         $result = $conn->query($sql);
         $array = ['png','jpg','jpeg'];
         $r = '';
+
         while ($row = $result->fetch_assoc()){
             $r .= " {$row['firstname']} ";
             $r .= "{$row['sirname']} <br>";
@@ -17,11 +16,11 @@ ini_set('display_errors', 1);
             $r .= "Your current weight is {$row['weight']}kg <br>";
             $r .= "You have {$row['score']} points <br>";
         }
-
         if (isset($_POST['upload'])){
             $image = $_FILES["image"];
             $type = explode('/', $image['type']);
             $imgType = ".{$type[1]}";
+            var_dump($image);
             if ($type[1] === $array[0] || $type[1] === $array[1] || $type[1] === $array[2]){
                 $sqlimageupload = "UPDATE userprofile SET image = '$_SESSION[login_user]$imgType' WHERE username = '$_SESSION[login_user]';";
                 $resultupload = $conn->query($sqlimageupload);
@@ -36,7 +35,6 @@ ini_set('display_errors', 1);
             }
 
         }
-
         $sqlimage = "SELECT image FROM userprofile WHERE username = '$_SESSION[login_user]'";
         $resultimage = $conn->query($sqlimage);
         $rimage = "";
@@ -50,9 +48,6 @@ ini_set('display_errors', 1);
     }else{
         header("location: pages/login.php");
     }
-
-
-
 ?>
 
 <!doctype html>
