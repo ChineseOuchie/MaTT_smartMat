@@ -20,6 +20,7 @@
                 $sqluserprofile = "INSERT INTO userprofile (username, firstname, sirname, age, weight) VALUES ('$username', '$firstname', '$sirname', '$age', '$weight');";
                 $conn->query($sqluserprofile);
                 $conn->query($sql);
+                header("Location: login.php");
             } else {
                 $msg = "Password does not match the confirm password.";
             }

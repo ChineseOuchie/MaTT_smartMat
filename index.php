@@ -33,18 +33,23 @@
             }else{
                 echo "Image type is not supported";
             }
-
         }
         $sqlimage = "SELECT image FROM userprofile WHERE username = '$_SESSION[login_user]'";
         $resultimage = $conn->query($sqlimage);
         $rimage = "";
         while ($rowimage = $resultimage->fetch_assoc()){
+            $x = file_Exists("img/profile_img/{$rowimage['image']}");
             if ($rowimage['image'] === null){
                 $rimage = "<img class='profileImage' src='img/profile_img/placeholder.png' alt='profile image'> <br>";
             } else{
-                $rimage = "<img class='profileImage' src='img/profile_img/{$rowimage['image']}' alt='profile image'> <br>";
+                if ($x == 1){
+                    $rimage = "<img class='profileImage' src='img/profile_img/{$rowimage['image']}' alt='profile image'> <br>";
+                }else{
+                    $rimage = "<img class='profileImage' src='img/profile_img/placeholder.png' alt='profile image'> <br>";
+                }
             }
         }
+
     }else{
         header("location: pages/login.php");
     }
@@ -65,7 +70,7 @@
     <div id="container">
         <div id="Profile-Information">
             <form action="index.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="size" value="1000000">
+                <input type="hidden" name="size" value="1000000000">
                 <input type="file" name="image">
                 <input type="submit" name="upload" value="Upload Image">
             </form>
