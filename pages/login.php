@@ -18,14 +18,14 @@
 
             if($count == 1) {
                 $_SESSION['login_user'] = $username;
-                header("location: ../index.php");
+                header("location: ../indexOld.php");
             }else {
                 $error = "Your Login Name or Password is invalid";
             }
         }
     }
     if (isset($_SESSION['login_user'])){
-        header("location: ../index.php");
+        header("location: ../indexOld.php");
     }
 
 ?>
