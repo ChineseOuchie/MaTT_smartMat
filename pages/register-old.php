@@ -36,31 +36,33 @@
     <title>Register</title>
     <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css" type="text/css">
-    <script src="../js/main.js"></script>
-
+    <style>
+        label, input{
+            display: block;
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <form method="post">
         <label for="firstname">Firstname</label>
-        <input id="firstname" type="text" name="firstname" class="registerInput" required>
+        <input id="firstname" type="text" name="firstname" required>
         <label for="sirname">Sirname</label>
-        <input id="sirname" type="text" name="sirname" class="registerInput" required>
+        <input id="sirname" type="text" name="sirname" required>
         <label for="age">Age</label>
-        <input id="age" type="number" name="age" class="registerInput" required>
+        <input id="age" type="number" name="age" required>
         <label for="weight">Weight</label>
-        <input id="weight" type="number" name="weight" class="registerInput" required>
+        <input id="weight" type="number" name="weight" required>
         <label for="username">Username</label>
-        <input id="username" type="text" name="username" class="registerInput" required>
+        <input id="username" type="text" name="username" required>
         <label for="password">Password</label>
-        <input id="password" type="password" name="password" class="registerInput" required>
+        <input id="password" type="password" name="password" required>
         <label for="rePassword">Confirm password</label>
-        <input id="rePassword" type="password" name="rePassword" class="registerInput" required>
+        <input id="rePassword" type="password" name="rePassword" required>
         <?php echo $msg?>
         <label for="email">E-mail</label>
         <input id="email" type="email" name="email">
         <input type="submit" name="submit">
-    </form>
-    <form method="post">
     </form>
 </body>
 </html>

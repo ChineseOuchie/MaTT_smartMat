@@ -64,7 +64,6 @@ table {
     min-height: 100%;
     z-index: -2;
 }
-
 /*LOGIN*/
 * {
     box-sizing: border-box;
@@ -74,72 +73,27 @@ body {
     background-color: #f1f1f1;
     font-family: Chivo;
 }
+#container{
 
-#regForm {
-    background-color: #ffffff;
-    margin: 100px auto;
-    padding: 40px;
-    width: 70%;
-    min-width: 300px;
 }
-
-h1 {
-    text-align: center;
+#loginForm{
+    width: 850px;
+    height: 350px;
+    /*border: 1px solid black;*/
+    margin: 40px auto;
+    margin-left: 550px;
+    background: url("../img/inlog.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-input {
-    padding: 10px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
-    border: 1px solid #aaaaaa;
+#loginForm > input, label{
+    display: block;
+    width: 150px;
+    float: right;
+    clear: both;
 }
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-    background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-    display: none;
-}
-
-button {
-    background-color: #4CAF50;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 17px;
-    font-family: Raleway;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-#prevBtn {
-    background-color: #bbbbbb;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-}
-
-.step.active {
-    opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-    background-color: #4CAF50;
+#logo{
+    height: 150px;
+    padding-top: 100px;
+    padding-left: 115px;
 }
