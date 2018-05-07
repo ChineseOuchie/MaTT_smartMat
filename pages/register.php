@@ -34,6 +34,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Register</title>
+    <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
     <style>
         label, input{
             display: block;
