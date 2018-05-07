@@ -33,18 +33,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
+    <link href="../css/main.css" type="text/css" rel="stylesheet">
+    <script src="../js/main.js"></script>
     <title>Login</title>
 </head>
 <body>
-    <form action="" method="post">
-        <label for="username">Username</label>
-        <input id="username" type="text" name="username">
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password">
-        <input type="submit" name="submit">
-    </form>
-    <a href="register.php">Register</a>
+    <div id="container">
+        <form id="regForm" action="login.php">
+            <h1>Register:</h1>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">Name:
+                <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+                <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+            </div>
+            <div class="tab">Contact Info:
+                <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+                <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+            </div>
+            <div class="tab">Birthday:
+                <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+                <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+                <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+            </div>
+            <div class="tab">Login Info:
+                <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+                <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+            </div>
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+        </form>
+        <video autoplay muted loop id="bgVideo">
+            <source src="../video/running.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 </html>

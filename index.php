@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MaTT Dashboard</title>
     <link href="css/main.css" rel="stylesheet" type="text/css">
+
     <script src="js/main.js"></script>
 </head>
 <body>
-<video autoplay muted loop id="bgVideo">
-    <source src="video/running.mp4" type="video/mp4">
-</video>
 <div id="container">
     <div>
         <img src="">
