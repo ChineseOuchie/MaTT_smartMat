@@ -45,7 +45,6 @@ table {
 
 /*F6986E      2F343B         5962FF        FFFF65*/
 /*blorange, donker grijs, deep sea blue, pasteel geel*/
-@import url('https://fonts.googleapis.com/css?family=Chivo');
 *{
     box-sizing: border-box;
 }
@@ -73,13 +72,12 @@ table {
 
 body {
     background-color: #f1f1f1;
-    font-family: "Chivo";
+    font-family: Chivo;
 }
 
 #regForm {
     background-color: #ffffff;
     margin: 100px auto;
-    font-family: Raleway;
     padding: 40px;
     width: 70%;
     min-width: 300px;
