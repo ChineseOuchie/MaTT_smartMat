@@ -41,12 +41,13 @@
 <body>
     <div id="container">
         <img src="../img/logo.png" id="logo">
+
         <form action="" method="" id="loginForm">
-            <label for="email">Email</label>
-            <input id="email" type="text" required>
-            <label for="password">Password</label>
-            <input id="password" type="password" required   >
-            <input type="submit">
+            <div id="matt"></div>
+            <input id="email" type="text" required placeholder="Email">
+            <input id="password" type="password" required placeholder="Password">
+            <input type="submit" id="login" placeholder="Submit">
+            <button type="submit" id="register"><a href="register.php">register</a></button>
         </form>
         <video autoplay muted loop id="bgVideo">
             <source src="../video/running.mp4" type="video/mp4">
