@@ -52,6 +52,7 @@ table {
     height: 200px;
     padding-top: 100px;
     padding-left: 115px;
+    margin-top: -30px;
 }
 .profileImage{
     width: 100px;
@@ -93,7 +94,7 @@ a{
     width: 850px;
     height: 350px;
     /*border: 1px solid black;*/
-    margin: 40px auto 40px 550px;
+    margin: 30px auto 40px 550px;
     background: url("../img/inlog.png") no-repeat;
     background-size: cover;
 }
