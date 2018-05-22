@@ -98,7 +98,7 @@ a{
     background: url("../img/inlog.png") no-repeat;
     background-size: cover;
 }
-#loginForm> #email, #password, #login, #register{
+#loginForm > #email, #loginForm > #password, #loginForm > #login, #loginForm > #register{
     display: block;
     float: right;
     clear: both;
@@ -106,14 +106,14 @@ a{
     background-color: white;
     border-radius: 15px;
 }
-#loginForm > #email, #password{
+#loginForm > #email, #loginForm >  #password{
     width: 300px;
     height: 50px;
     margin-right: 100px;
     margin-top: 30px;
     padding-left: 20px;
 }
-#loginForm > #login, #register{
+#loginForm > #login, #loginForm >  #register{
     width: 150px;
     height: 50px;
     margin-right: 175px;
@@ -124,7 +124,6 @@ a{
     margin-top: 15px;
     text-align: center;
 }
-
 #matt{
     width: 250px;
     height: 450px;
@@ -133,4 +132,27 @@ a{
     margin-top: -50px;
     margin-left: 100px;
     border-radius: 30px;
+}
+/*Register*/
+#registerForm{
+    width: 850px;
+    height: 350px;
+    /*border: 1px solid black;*/
+    margin: 30px auto 40px 550px;
+    background: url("../img/inlog.png") no-repeat;
+    background-size: cover;
+}
+#registerForm > label > img{
+    width: 50px;
+}
+#registerForm >label > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+#registerForm >label > input + img{ /* IMAGE STYLES */
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+#registerForm >label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #f00;
 }

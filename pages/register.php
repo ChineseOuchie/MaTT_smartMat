@@ -31,36 +31,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
-    <script src="../js/main.js"></script>
-
+    <link href="../css/main.css" type="text/css" rel="stylesheet">
+    <title>MATT Register</title>
 </head>
 <body>
-    <form method="post">
-        <label for="firstname">Firstname</label>
-        <input id="firstname" type="text" name="firstname" class="registerInput" required>
-        <label for="sirname">Sirname</label>
-        <input id="sirname" type="text" name="sirname" class="registerInput" required>
-        <label for="age">Age</label>
-        <input id="age" type="number" name="age" class="registerInput" required>
-        <label for="weight">Weight</label>
-        <input id="weight" type="number" name="weight" class="registerInput" required>
-        <label for="username">Username</label>
-        <input id="username" type="text" name="username" class="registerInput" required>
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" class="registerInput" required>
-        <label for="rePassword">Confirm password</label>
-        <input id="rePassword" type="password" name="rePassword" class="registerInput" required>
-        <?php echo $msg?>
-        <label for="email">E-mail</label>
-        <input id="email" type="email" name="email">
-        <input type="submit" name="submit">
+<div id="container">
+    <img src="../img/logo.png" id="logo">
+    <form method="post" id="registerForm">
+        <input id="firstname" type="text" name="firstname" class="registerInput" required placeholder="Firstname">
+        <input id="sirname" type="text" name="sirname" class="registerInput" required placeholder="Surname">
+        <input id="email" type="email" name="email" placeholder="email">
+        <input id="password" type="password" name="password" class="registerInput" required placeholder="Password">
+        <input id="rePassword" type="password" name="rePassword" class="registerInput" required placeholder="rePassword">
+        <div id="registerMsg"><?php echo $msg?></div>
+        <label>
+            <input id="male" type="radio" class="registerInput" name="gender" value="male">
+            <img src="../img/male.png">
+        </label>
+        <label>
+            <input id="female" type="radio" class="registerInput" name="gender" value="female">
+            <img src="../img/female.png">
+        </label>
+
+        <input id="age" type="number" name="age" class="registerInput" required placeholder="Age">
+        <input id="weight" type="number" name="weight" class="registerInput" required placeholder="weight in KG">
+
+        <input type="submit" name="submit" value="next">
     </form>
-    <form method="post">
-    </form>
+    <video autoplay muted loop id="bgVideo">
+        <source src="../video/running.mp4" type="video/mp4">
+    </video>
+</div>
 </body>
 </html>
+
