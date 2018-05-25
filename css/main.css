@@ -142,17 +142,65 @@ a{
     background: url("../img/inlog.png") no-repeat;
     background-size: cover;
 }
-#registerForm > label > img{
+.registerInput{
+    display: block;
+    width: 200px;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    padding-left: 20px;
+    margin-top: 20px;
+    clear: both;
+}
+#sides{
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#registerSide1{
+    flex: 1;
+    padding-left: 90px;
+}
+#registerSide2{
+    flex: 1;
+}
+#registerForm > div > div > label{
+    display: block;
+    width: 90px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+#registerSide2 > label:nth-child(3){
+    margin-left: 15px;
+}
+#registerSide2 > label > img{
     width: 50px;
 }
-#registerForm >label > input{ /* HIDE RADIO */
+#registerSide2 > label > input{ /* HIDE RADIO */
     visibility: hidden; /* Makes input not-clickable */
     position: absolute; /* Remove input from document flow */
 }
-#registerForm >label > input + img{ /* IMAGE STYLES */
+#registerSide2 > label > input + img{ /* IMAGE STYLES */
     cursor: pointer;
     border: 2px solid transparent;
 }
-#registerForm >label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+#registerSide2 > label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
     border:2px solid #f00;
+}
+#registerSubmit{
+    display: block;
+    height: 20px;
+    width: 40px;
+}
+#registerMsg{
+    width: 200px;
+    height: 80px;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 20px;
 }
