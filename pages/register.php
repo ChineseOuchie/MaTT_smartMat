@@ -9,15 +9,15 @@
             $firstname = $_POST['firstname'];
             $sirname = $_POST['sirname'];
             $age = $_POST['age'];
+            $gender = $_POST['gender'];
             $weight = $_POST['weight'];
-            $username = $_POST['username'];
             $password = $_POST['password'];
             $rePassword = $_POST['rePassword'];
             $email = $_POST['email'];
 
             if ($password === $rePassword) {
-                $sql = "INSERT INTO loginGebruiker (username, password, email) VALUES ('$username', '$password', '$email');";
-                $sqluserprofile = "INSERT INTO userprofile (username, firstname, sirname, age, weight) VALUES ('$username', '$firstname', '$sirname', '$age', '$weight');";
+                $sql = "INSERT INTO loginGebruiker (password, email) VALUES ('$password', '$email');";
+                $sqluserprofile = "INSERT INTO userprofile (firstname, sirname, age, gender, weight) VALUES ('$firstname', '$sirname', '$age', '$gender', '$weight');";
                 $conn->query($sqluserprofile);
                 $conn->query($sql);
                 header("Location: login.php");
@@ -39,7 +39,7 @@
 <body>
 <div id="container">
     <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
-    <form method="post" id="registerForm">
+    <form method="post" action="#" id="registerForm">
         <div id="sides">
             <div id="registerSide1">
                 <input id="firstname" type="text" name="firstname" class="registerInput" required placeholder="Firstname">
