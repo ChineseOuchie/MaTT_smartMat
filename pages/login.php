@@ -14,19 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
         $id = $row['idloginGebruiker'];
 
-        echo $email;
+
         $count = $result->num_rows;
 
         if($count == 1) {
             $_SESSION['login_user'] = $email;
-            header("location: ../indexOld.php");
+            header("location: ../index.php");
         }else {
             $error = "Your Login Name or Password is invalid";
         }
     }
 }
 if (isset($_SESSION['login_user'])){
-    header("location: ../indexOld.php");
+    header("location: ../index.php");
 }
 
 ?>
@@ -47,7 +47,7 @@ if (isset($_SESSION['login_user'])){
         <div id="matt"></div>
         <input name="email" id="email" type="text" required placeholder="Email">
         <input name="password" id="password" type="password" required placeholder="Password">
-        <input type="submit" id="login" placeholder="Submit">
+        <input type="submit" name= "submit" id="login" placeholder="Submit">
         <button type="submit" id="register"><a href="register.php">register</a></button>
     </form>
     <video autoplay muted loop id="bgVideo">

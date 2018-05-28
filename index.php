@@ -21,6 +21,7 @@
     <div>matt man</div>
     <a href="pages/login.php">Login</a>
     <a href="pages/register.php">Register</a>
+    <a href="pages/logout.php">Logout</a>
 </div>
 </body>
 </html>
