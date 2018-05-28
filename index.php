@@ -19,6 +19,8 @@
         </form>
     </div>
     <div>matt man</div>
+    <a href="pages/login.php">Login</a>
+    <a href="pages/register.php">Register</a>
 </div>
 </body>
 </html>

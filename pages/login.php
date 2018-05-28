@@ -40,7 +40,7 @@ if (isset($_SESSION['login_user'])){
 </head>
 <body>
 <div id="container">
-    <img src="../img/logo.png" id="logo">
+    <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
 
     <form action="" method="" id="loginForm">
         <div id="matt"></div>

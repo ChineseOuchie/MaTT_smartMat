@@ -38,7 +38,7 @@
 </head>
 <body>
 <div id="container">
-    <img src="../img/logo.png" id="logo">
+    <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
     <form method="post" id="registerForm">
         <div id="sides">
             <div id="registerSide1">
