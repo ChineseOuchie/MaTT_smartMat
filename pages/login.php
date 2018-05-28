@@ -6,18 +6,19 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = new mysqli("localhost", "root", "root", "matt");
     if (isset($_POST['submit'])) {
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT idloginGebruiker FROM loginGebruiker WHERE username = '$username' and password = '$password';";
+        $sql = "SELECT idloginGebruiker FROM loginGebruiker WHERE email = '$email' and password = '$password';";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $id = $row['idloginGebruiker'];
 
+        echo $email;
         $count = $result->num_rows;
 
         if($count == 1) {
-            $_SESSION['login_user'] = $username;
+            $_SESSION['login_user'] = $email;
             header("location: ../indexOld.php");
         }else {
             $error = "Your Login Name or Password is invalid";
@@ -42,10 +43,10 @@ if (isset($_SESSION['login_user'])){
 <div id="container">
     <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
 
-    <form action="" method="" id="loginForm">
+    <form action="#" method="post" id="loginForm">
         <div id="matt"></div>
-        <input id="email" type="text" required placeholder="Email">
-        <input id="password" type="password" required placeholder="Password">
+        <input name="email" id="email" type="text" required placeholder="Email">
+        <input name="password" id="password" type="password" required placeholder="Password">
         <input type="submit" id="login" placeholder="Submit">
         <button type="submit" id="register"><a href="register.php">register</a></button>
     </form>
