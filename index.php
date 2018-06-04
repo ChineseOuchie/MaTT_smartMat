@@ -11,17 +11,22 @@
 </head>
 <body>
 <div id="container">
-    <div>
-        <img src="">
+    <a href="index.php"><img src="img/logo.png" id="logo"></a>
+<!--    <div>matt man</div>-->
+<!--    <a href="pages/login.php">Login</a>-->
+<!--    <a href="pages/register.php">Register</a>-->
+<!--    <a href="pages/logout.php">Logout</a>-->
+
+    <img src="img/gear.png" alt="" class="dashboardIcon">
+    <img src="img/trophy.png" alt="" class="dashboardIcon">
+    <div id="dashboardItem">
+        <div id="goal" class="item"> Goals</div>
+        <div id="health" class="item"> Health</div>
+        <div id="workout" class="item">Workout Videos</div>
     </div>
-    <div>
-        <form>
-        </form>
-    </div>
-    <div>matt man</div>
-    <a href="pages/login.php">Login</a>
-    <a href="pages/register.php">Register</a>
-    <a href="pages/logout.php">Logout</a>
 </div>
+<video autoplay muted loop id="bgVideo">
+    <source src="video/running.mp4" type="video/mp4">
+</video>
 </body>
 </html>
