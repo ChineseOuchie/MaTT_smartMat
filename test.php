@@ -27,48 +27,48 @@
     <div class="modal-content">
         <span class="close">&times;</span>
 
-        <form action="#" method="post">
+        <form>
             <label class="formtitle">Category</label>
             <select id="select" name="category" onchange="selectchange()">
                 <option disabled selected> -- select an option -- </option>
-                <option value="weight">Weight loss</option>
-                <option value="exercise">Exercise</option>
-                <option value="calories">Calories</option>
+                <option>Weight loss</option>
+                <option>Exercise</option>
+                <option>Calories</option>
             </select><br><br>
 
             <div id="weightlossForm">
                 <label>Amount of Kilograms you want to lose</label>
-                <input type="number"><br>
+                <input id="weightlossKg" type="number"><br>
 
                 <label>Days to finish goal</label>
-                <input type="number"><br><br>
+                <input id="weightlossTime" type="number"><br><br>
 
-                <input type="submit" value="Submit Goal">
+                <input type="submit" value="Submit Goal" onclick="submitWeightloss()">
             </div>
 
             <div id="exerciseForm">
                 <label>Amount of days</label>
-                <input type="number"><br>
+                <input id="exerciseTime" type="number"><br>
 
                 <label>Per</label>
-                <select name="exerciseSelect">
+                <select id="exercisePer" name="exerciseSelect">
                     <option disabled selected>-- Period of time --</option>
                     <option>Day</option>
                     <option>Week</option>
                     <option>Month</option>
                 </select><br><br>
 
-                <input type="submit" value="Submit Goal">
+                <input type="submit" value="Submit Goal" onclick="submitExercise()">
             </div>
 
             <div id="caloriesForm">
                 <label>Amount of calories</label>
-                <input type="number"><br>
+                <input id="caloriesAmount" type="number"><br>
 
                 <label>In how many days</label>
-                <input type="number"><br><br>
+                <input id="caloriesTime" type="number"><br><br>
 
-                <input type="submit" value="Submit Goal">
+                <input type="submit" value="Submit Goal" onclick="submitCalories()">
             </div>
         </form>
     </div>
@@ -103,23 +103,48 @@
     const calories = document.getElementById("caloriesForm");
 
     function selectchange() {
-        if(document.getElementById("select").value === "weight") {
+        if(document.getElementById("select").value === "Weight loss") {
             weightloss.style.display = "block";
             exercise.style.display = "none";
             calories.style.display = "none";
         }
 
-        if(document.getElementById("select").value === "exercise") {
+        if(document.getElementById("select").value === "Exercise") {
             exercise.style.display = "block";
             weightloss.style.display = "none";
             calories.style.display = "none";
         }
 
-        if(document.getElementById("select").value === "calories") {
+        if(document.getElementById("select").value === "Calories") {
             calories.style.display = "block";
             exercise.style.display = "none";
             weightloss.style.display = "none";
         }
+    }
+
+    const select = document.getElementById("select").value;
+
+    const weightlosskg = document.getElementById("weightlossKg").value;
+    const weightlossTime = document.getElementById("weightlossTime").value;
+
+    const exerciseTime = document.getElementById("exerciseTime").value;
+    const exercisePer = document.getElementById("exercisePer").value;
+
+    const caloriesAmount = document.getElementById("caloriesAmount").value;
+    const caloriesTime = document.getElementById("caloriesTime").value;
+
+    const output = document.getElementById("goalOutput");
+
+    function submitWeightloss() {
+        output.innerHTML += "<h3>" + select + "</h3>"
+    }
+
+    function submitExercise() {
+
+    }
+
+    function submitCalories() {
+
     }
 </script>
 
