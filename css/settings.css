@@ -1,0 +1,36 @@
+#settings{
+    margin-top: 50px;
+    margin-left: 116px;
+    margin-right: 66px;
+    background-color: white;
+    min-height: 450px;
+    padding-left: 50px;
+}
+#settings > h1{
+    padding: 40px 40px 0 0;
+}
+#settingsItems{
+    display: flex;
+    /*flex-wrap: wrap;*/
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+#settingsItems > nav{
+    border-right: 1px solid black;
+    min-width: 300px;
+}
+#settingsItems > nav > ul > li {
+    font-size: 20px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.info{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}

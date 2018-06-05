@@ -17,8 +17,8 @@
 <!--    <a href="pages/register.php">Register</a>-->
 <!--    <a href="pages/logout.php">Logout</a>-->
 
-    <a href="" class="dashboardIcon"><img src="img/gear.png" alt="" ></a>
-    <a href="" class="dashboardIcon"><img src="img/trophy.png" alt="" ></a>
+    <a href="pages/settings.php" class="dashboardIcon"><img src="img/gear.png" alt="" ></a>
+    <a href="pages/achievement.php" class="dashboardIcon"><img src="img/trophy.png" alt="" ></a>
     <a href="" class="dashboardIcon"><img src="img/profile.png" alt="" ></a>
     <div id="dashboardItem">
         <div id="goal" class="item"> Goals</div>

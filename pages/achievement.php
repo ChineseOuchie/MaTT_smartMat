@@ -11,7 +11,6 @@ session_start();
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
     <link href="../css/main.css" type="text/css" rel="stylesheet">
-    <link href="../css/achievement.css" type="text/css" rel="stylesheet">
     <title>MATT Achievement</title>
 </head>
 <body>

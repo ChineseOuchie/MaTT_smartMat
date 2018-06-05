@@ -264,6 +264,30 @@ a{
 .workout > .info > h3, .health > .info > h3{
     margin-top: 0;
 }
+
+#achievement{
+    margin-top: 50px;
+    margin-left: 116px;
+    margin-right: 66px;
+    background-color: white;
+    min-height: 450px;
+    padding-left: 50px;
+}
+#achievement > h1{
+    padding: 40px 40px 0 0;
+}
+#achievementItems{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+#complete{
+    flex: 1;
+}
+#uncompleted{
+    flex: 1;
+}
 @media (max-width: 1250px) {
     #workout{
         margin-left: 116px;
