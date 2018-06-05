@@ -39,17 +39,13 @@
             <div id="weightlossForm">
                 <label>Amount of Kilograms you want to lose</label>
                 <input id="weightlossKg" type="number"><br>
-
                 <label>Days to finish goal</label>
                 <input id="weightlossTime" type="number"><br><br>
-
-                <input type="submit" value="Submit Goal" onclick="submitWeightloss()">
+                <input type="button" value="Submit Goal" id="submitWeightloss">
             </div>
-
             <div id="exerciseForm">
                 <label>Amount of days</label>
                 <input id="exerciseTime" type="number"><br>
-
                 <label>Per</label>
                 <select id="exercisePer" name="exerciseSelect">
                     <option disabled selected>-- Period of time --</option>
@@ -57,18 +53,15 @@
                     <option>Week</option>
                     <option>Month</option>
                 </select><br><br>
-
-                <input type="submit" value="Submit Goal" onclick="submitExercise()">
+                <input type="button" value="Submit Goal" id="submitExercise">
             </div>
 
             <div id="caloriesForm">
                 <label>Amount of calories</label>
                 <input id="caloriesAmount" type="number"><br>
-
                 <label>In how many days</label>
                 <input id="caloriesTime" type="number"><br><br>
-
-                <input type="submit" value="Submit Goal" onclick="submitCalories()">
+                <input type="button" value="Submit Goal" id="submitCalories">
             </div>
         </form>
     </div>
@@ -97,11 +90,8 @@
     };
 
     const weightloss = document.getElementById("weightlossForm");
-
     const exercise = document.getElementById("exerciseForm");
-
     const calories = document.getElementById("caloriesForm");
-
     function selectchange() {
         if(document.getElementById("select").value === "Weight loss") {
             weightloss.style.display = "block";
@@ -121,31 +111,37 @@
             weightloss.style.display = "none";
         }
     }
-
-    const select = document.getElementById("select").value;
-
-    const weightlosskg = document.getElementById("weightlossKg").value;
-    const weightlossTime = document.getElementById("weightlossTime").value;
-
-    const exerciseTime = document.getElementById("exerciseTime").value;
-    const exercisePer = document.getElementById("exercisePer").value;
-
-    const caloriesAmount = document.getElementById("caloriesAmount").value;
-    const caloriesTime = document.getElementById("caloriesTime").value;
-
     const output = document.getElementById("goalOutput");
+    const submitWeightloss = document.getElementById('submitWeightloss');
+    const submitExercise = document.getElementById('submitExercise');
+    const submitCalories = document.getElementById('submitCalories');
 
-    function submitWeightloss() {
-        output.innerHTML += "<h3>" + select + "</h3>"
-    }
+    submitWeightloss.addEventListener('click', function () {
+        const select = document.getElementById("select").value;
 
-    function submitExercise() {
+        const weightlosskg = document.getElementById("weightlossKg").value;
+        const weightlossTime = document.getElementById("weightlossTime").value;
+        modal.style.display = "none";
+        output.innerHTML += `<h3>${select}</h3><p>${weightlosskg}kg in ${weightlossTime} Days`;
+    });
 
-    }
+    submitExercise.addEventListener('click', function () {
+        const select = document.getElementById("select").value;
 
-    function submitCalories() {
+        const exerciseTime = document.getElementById("exerciseTime").value;
+        const exercisePer = document.getElementById("exercisePer").value;
+        modal.style.display = "none";
+        output.innerHTML += `<h3>${select}</h3><p>I want to exercise ${exerciseTime} time(s) a ${exercisePer}`;
+    });
 
-    }
+    submitCalories.addEventListener('click', function () {
+        const select = document.getElementById("select").value;
+
+        const caloriesAmount = document.getElementById("caloriesAmount").value;
+        const caloriesTime = document.getElementById("caloriesTime").value;
+        modal.style.display = "none";
+        output.innerHTML += `<h3>${select}</h3><p>I want to lose ${caloriesAmount} Calories in ${caloriesTime} day(s)`;
+    })
 </script>
 
 </body>

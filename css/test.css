@@ -56,9 +56,11 @@ body{
     margin-left: 3vw;
     width: 25%;
     height: 80vh;
+    overflow-y: scroll;
 }
 .inContent{
     margin-left: 27px;
+
 }
 
 #myBtn{

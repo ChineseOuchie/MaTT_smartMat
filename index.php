@@ -78,8 +78,5 @@
         </div>
     </div>
 </div>
-<video autoplay muted loop id="bgVideo">
-    <source src="video/running.mp4" type="video/mp4">
-</video>
 </body>
 </html>
