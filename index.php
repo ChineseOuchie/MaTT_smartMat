@@ -38,7 +38,7 @@
                     <form id="form">
                         <label class="formtitle">Category</label>
                         <select id="select" name="category">
-                            <option disabled selected> -- select an option -- </option>
+                            <option disabled selected value="selectOption"> -- select an option -- </option>
                             <option>Weight loss</option>
                             <option>Exercise</option>
                             <option>Calories</option>

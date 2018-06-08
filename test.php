@@ -55,7 +55,6 @@
                 </select><br><br>
                 <input type="button" value="Submit Goal" id="submitExercise">
             </div>
-
             <div id="caloriesForm">
                 <label>Amount of calories</label>
                 <input id="caloriesAmount" type="number"><br>
@@ -65,9 +64,7 @@
             </div>
         </form>
     </div>
-
 </div>
-
 <script>
     const modal = document.getElementById('myModal');
     const btn = document.getElementById("myBtn");

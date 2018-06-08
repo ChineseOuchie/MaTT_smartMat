@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const weightloss = document.getElementById("weightlossForm");
     const exercise = document.getElementById("exerciseForm");
     const calories = document.getElementById("caloriesForm");
+    function formReset() {
+        form.reset();
+        weightloss.style.display = "none";
+        exercise.style.display = "none";
+        calories.style.display = "none";
+    }
     function selectchange() {
         if(document.getElementById("select").value === "Weight loss") {
             weightloss.style.display = "block";
@@ -40,28 +46,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitCalories = document.getElementById('submitCalories');
     submitWeightloss.addEventListener('click', function () {
         const select = document.getElementById("select").value;
-        const weightlosskg = document.getElementById("weightlossKg").value;
-        const weightlossTime = document.getElementById("weightlossTime").value;
-        modal.style.display = "none";
-        output.innerHTML += `<div><h3>${select}</h3><p>${weightlosskg}kg in ${weightlossTime} Days</div>`;
-        form.reset();
+        if (select !== "selectOption"){
+            const weightlosskg = document.getElementById("weightlossKg").value;
+            const weightlossTime = document.getElementById("weightlossTime").value;
+            modal.style.display = "none";
+            output.innerHTML += `<div><h3>${select}</h3><p>${weightlosskg}kg in ${weightlossTime} Days</div>`;
+            formReset();
+
+        }
+
     });
     submitExercise.addEventListener('click', function () {
         const select = document.getElementById("select").value;
-        const exerciseTime = document.getElementById("exerciseTime").value;
-        const exercisePer = document.getElementById("exercisePer").value;
-        modal.style.display = "none";
-        output.innerHTML += `<div><h3>${select}</h3><p>I want to exercise ${exerciseTime} time(s) a ${exercisePer}</div>`;
-        form.reset();
+        if (select !== "selectOption") {
+            const exerciseTime = document.getElementById("exerciseTime").value;
+            const exercisePer = document.getElementById("exercisePer").value;
+            modal.style.display = "none";
+            output.innerHTML += `<div><h3>${select}</h3><p>I want to exercise ${exerciseTime} time(s) a ${exercisePer}</div>`;
+            formReset();
+        }
 
     });
     submitCalories.addEventListener('click', function () {
         const select = document.getElementById("select").value;
-        const caloriesAmount = document.getElementById("caloriesAmount").value;
-        const caloriesTime = document.getElementById("caloriesTime").value;
-        modal.style.display = "none";
-        output.innerHTML += `<div><h3>${select}</h3><p>I want to lose ${caloriesAmount} Calories in ${caloriesTime} day(s)</div>`;
-        form.reset();
+        if (select !== "selectOption") {
+            const caloriesAmount = document.getElementById("caloriesAmount").value;
+            const caloriesTime = document.getElementById("caloriesTime").value;
+            modal.style.display = "none";
+            output.innerHTML += `<div><h3>${select}</h3><p>I want to lose ${caloriesAmount} Calories in ${caloriesTime} day(s)</div>`;
+            formReset();
+        }
 
     })
 });
