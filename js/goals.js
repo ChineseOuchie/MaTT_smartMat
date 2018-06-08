@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = "none";
             output.innerHTML += `<div><h3>${select}</h3><p>${weightlosskg}kg in ${weightlossTime} Days</div>`;
             formReset();
-
         }
-
     });
     submitExercise.addEventListener('click', function () {
         const select = document.getElementById("select").value;
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
             output.innerHTML += `<div><h3>${select}</h3><p>I want to exercise ${exerciseTime} time(s) a ${exercisePer}</div>`;
             formReset();
         }
-
     });
     submitCalories.addEventListener('click', function () {
         const select = document.getElementById("select").value;
@@ -76,6 +73,5 @@ document.addEventListener('DOMContentLoaded', function () {
             output.innerHTML += `<div><h3>${select}</h3><p>I want to lose ${caloriesAmount} Calories in ${caloriesTime} day(s)</div>`;
             formReset();
         }
-
     })
 });
