@@ -29,7 +29,7 @@
 
         <form>
             <label class="formtitle">Category</label>
-            <select id="select" name="category" onchange="selectchange()">
+            <select id="select" name="category">
                 <option disabled selected> -- select an option -- </option>
                 <option>Weight loss</option>
                 <option>Exercise</option>
@@ -70,15 +70,14 @@
 
 <script>
     const modal = document.getElementById('myModal');
-
     const btn = document.getElementById("myBtn");
-
     const span = document.getElementsByClassName("close")[0];
+    const select = document.getElementById("select");
 
+    select.addEventListener('click', selectchange);
     btn.addEventListener("click", function () {
         modal.style.display = "block";
     });
-
     span.addEventListener("click", function () {
         modal.style.display = "none";
     });

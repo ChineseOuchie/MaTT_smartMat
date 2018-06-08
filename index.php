@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="js/main.js"></script>
+    <script src="js/goals.js"></script>
 </head>
 <body>
 <div id="container">
@@ -21,7 +22,58 @@
     <a href="pages/achievement.php" class="dashboardIcon"><img src="img/trophy.png" alt="" ></a>
     <a href="" class="dashboardIcon"><img src="img/profile.png" alt="" ></a>
     <div id="dashboardItem">
-        <div id="goal" class="item"> Goals</div>
+        <div id="goal" class="item">
+            <div class="content">
+                <div class="inContent">
+                    <p class="title">Goals</p>
+                    <hr>
+                    <div id="goalOutput">
+                    </div>
+                </div>
+                <div id="myBtn">+</div>
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="form">
+                        <label class="formtitle">Category</label>
+                        <select id="select" name="category">
+                            <option disabled selected> -- select an option -- </option>
+                            <option>Weight loss</option>
+                            <option>Exercise</option>
+                            <option>Calories</option>
+                        </select><br><br>
+                        <div id="weightlossForm">
+                            <label>Amount of Kilograms you want to lose</label>
+                            <input id="weightlossKg" type="number"><br>
+                            <label>Days to finish goal</label>
+                            <input id="weightlossTime" type="number"><br><br>
+                            <input type="button" value="Submit Goal" id="submitWeightloss">
+                        </div>
+                        <div id="exerciseForm">
+                            <label>Amount of days</label>
+                            <input id="exerciseTime" type="number"><br>
+                            <label>Per</label>
+                            <select id="exercisePer" name="exerciseSelect">
+                                <option disabled selected>-- Period of time --</option>
+                                <option>Day</option>
+                                <option>Week</option>
+                                <option>Month</option>
+                            </select><br><br>
+                            <input type="button" value="Submit Goal" id="submitExercise">
+                        </div>
+                        <div id="caloriesForm">
+                            <label>Amount of calories</label>
+                            <input id="caloriesAmount" type="number"><br>
+                            <label>In how many days</label>
+                            <input id="caloriesTime" type="number"><br><br>
+                            <input type="button" value="Submit Goal" id="submitCalories">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
         <div id="health" class="item">
             <p class="title">Health</p>
             <div class="health">
