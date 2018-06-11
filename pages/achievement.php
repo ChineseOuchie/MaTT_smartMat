@@ -16,6 +16,10 @@ session_start();
 <body>
 <div id="container">
     <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
+    <a href="../pages/settings.php" class="dashboardIcon"><img src="../img/gear.png" alt="" ></a>
+    <a href="../pages/achievement.php" class="dashboardIcon"><img src="../img/achievementOrange.png" alt="" ></a>
+    <a href="" class="dashboardIcon"><img src="../img/profile.png" alt="" ></a>
+    <a href="../index.php" class="dashboardIcon"><img src="../img/dashboard.png" alt="Dashboard"></a>
     <div id="achievement">
         <h1>Achievement</h1>
         <div id="achievementItems">

@@ -29,6 +29,7 @@
     <a href="pages/settings.php" class="dashboardIcon"><img src="img/gear.png" alt="" ></a>
     <a href="pages/achievement.php" class="dashboardIcon"><img src="img/trophy.png" alt="" ></a>
     <a href="pages/profile.php" class="dashboardIcon"><img src="img/profile.png" alt="" ></a>
+    <a href="index.php" class="dashboardIcon"><img src="img/dashboardOrange.png" alt="" ></a>
     <div id="dashboardItem">
         <div id="goal" class="item">
             <div class="content">
@@ -112,29 +113,27 @@
         <div id="workout" class="item">
             <p class="title">Workout Videos</p>
             <div class="workout">
-                <img src="img/grafiek1.png">
+                <img src="img/dance.jpg">
                 <div class="info">
                     <h3>Dance</h3>
                     <p>Find more of our dance videos here</p>
-                    <a href="">More...</a>
                 </div>
             </div>
             <div class="workout">
-                <img src="img/grafiek1.png">
+                <img src="img/fitness.jpg">
                 <div class="info">
                     <h3>Fitness</h3>
                     <p>Find more of our fitness videos here</p>
-                    <a href="">More...</a>
                 </div>
             </div>
             <div class="workout">
-                <img src="img/grafiek2.png">
+                <img src="img/yoga.jpg">
                 <div class="info">
                     <h3>Yoga</h3>
                     <p>Find more of our yoga videos here</p>
-                    <a href="">More...</a>
                 </div>
             </div>
+            <a href="" id="moreWorkout">MORE...</a>
         </div>
     </div>
 </div>

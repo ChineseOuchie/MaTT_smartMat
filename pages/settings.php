@@ -17,6 +17,10 @@ session_start();
 <body>
 <div id="container">
     <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
+    <a href="../pages/settings.php" class="dashboardIcon"><img src="../img/settingsOrange.png" alt="" ></a>
+    <a href="../pages/achievement.php" class="dashboardIcon"><img src="../img/trophy.png" alt="" ></a>
+    <a href="" class="dashboardIcon"><img src="../img/profile.png" alt="" ></a>
+    <a href="../index.php" class="dashboardIcon"><img src="../img/dashboard.png" alt="Dashboard"></a>
     <div id="settings">
         <h1>Settings</h1>
         <div id="settingsItems">
@@ -55,9 +59,38 @@ session_start();
                     you will have the choice to opt in or out of receiving such communications by so indicating on the Website. You will also be given the opportunity on every e-communication
                     that we send you to indicate that you no longer wish to receive our direct marketing material
                 </div>
-                <div id="changePassword" class="info">change pass</div>
-                <div id="language" class="info">Language</div>
-                <div id="notification" class="info">Notification</div>
+                <div id="changePassword" class="info">
+                    <form>
+                        <input type="password" class="changePassword" id="oldPassword" placeholder="Current password">
+                        <input type="password" class="changePassword" id="newPassword" placeholder="New password">
+                        <input type="password" class="changePassword" id="repeatNewPassword" placeholder="Repeat new password">
+                        <input type="submit" name= "submit" id="changeSubmit" placeholder="Submit">
+                    </form>
+                </div>
+                <div id="language" class="info">
+                    <button class="languageBtn">English</button>
+                    <button class="languageBtn">Dutch</button>
+                    <button class="languageBtn">Italian</button>
+                    <button class="languageBtn">French</button>
+                    <button class="languageBtn">Spanish</button>
+                    <button class="languageBtn">Polish</button>
+                    <button class="languageBtn">German</button>
+                    <button class="languageBtn">japanese</button>
+                </div>
+                <div id="notification" class="info">
+                    <div id="notificationInfo">
+                        <p>Do you want the app to send you notifications?</p>
+                        <p>The app will let you know if its time to sport, if you didn’t reach your goal or if you did.</p>
+                    </div>
+                    <div id="notificationBtn">
+                        Off
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        On
+                    </div>
+                </div>
             </div>
         </div>
     </div>

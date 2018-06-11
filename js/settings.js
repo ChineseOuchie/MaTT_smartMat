@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (liItem[x].innerHTML === "Language"){
                 privacy.style.display = 'none';
                 changePassword.style.display = 'none';
-                language.style.display = 'block';
+                language.style.display = 'flex';
                 notification.style.display = 'none';
             } else if (liItem[x].innerHTML === "Notifications"){
                 privacy.style.display = 'none';
