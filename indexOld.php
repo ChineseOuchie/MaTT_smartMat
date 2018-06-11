@@ -1,10 +1,11 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
+
     session_start();
     if (isset($_SESSION['login_user'])){
         $conn = new mysqli("localhost", "root", "root", "matt");
-        $sql = "SELECT * FROM userprofile WHERE username = '{$_SESSION['login_user']}';";
+        $sql = "SELECT * FROM userprofile WHERE iduserprofile = '{$_SESSION['login_user']}';";
         $result = $conn->query($sql);
         $array = ['png','jpg','jpeg'];
         $r = '';

@@ -1,0 +1,16 @@
+#profilecontainer{
+    background-color: white;
+    position: absolute;
+    right: 0;
+    margin-top: 23px;
+    margin-right: 114px;
+    height: 68vh;
+    width: 60vw;
+}
+#profilecontent{
+    margin-left: 50px;
+}
+#profilecontent > img{
+    height: 100px;
+    width: 100px;
+}

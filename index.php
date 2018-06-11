@@ -1,3 +1,16 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    session_start();
+    if (isset($_SESSION['login_user'])){
+        $conn = new mysqli("localhost", "root", "root", "matt");
+        $sql = "";
+    }
+    else{
+        header("location: /pages/login.php");
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +28,7 @@
     <a href="index.php"><img src="img/logo.png" id="logo"></a>
     <a href="pages/settings.php" class="dashboardIcon"><img src="img/gear.png" alt="" ></a>
     <a href="pages/achievement.php" class="dashboardIcon"><img src="img/trophy.png" alt="" ></a>
-    <a href="" class="dashboardIcon"><img src="img/profile.png" alt="" ></a>
+    <a href="pages/profile.php" class="dashboardIcon"><img src="img/profile.png" alt="" ></a>
     <div id="dashboardItem">
         <div id="goal" class="item">
             <div class="content">

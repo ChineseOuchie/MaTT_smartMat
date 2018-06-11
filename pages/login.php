@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $count = $result->num_rows;
 
         if($count == 1) {
-            $_SESSION['login_user'] = $email;
+            $_SESSION['login_user'] = $id;
             header("location: ../index.php");
         }else {
             $error = "Your Login Name or Password is invalid";
