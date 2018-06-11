@@ -346,7 +346,7 @@ a{
     color: #F6986E;
 }
 #goalOutput{
-    height: 500px;
+    height: 440px;
     overflow-y: scroll;
 }
 hr{
@@ -411,6 +411,8 @@ hr{
     #health, #goal{
         margin-left: 116px;
         margin-right: 116px;
-
+    }
+    .dashboardIcon{
+        display: none;
     }
 }

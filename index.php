@@ -13,11 +13,6 @@
 <body>
 <div id="container">
     <a href="index.php"><img src="img/logo.png" id="logo"></a>
-<!--    <div>matt man</div>-->
-<!--    <a href="pages/login.php">Login</a>-->
-<!--    <a href="pages/register.php">Register</a>-->
-<!--    <a href="pages/logout.php">Logout</a>-->
-
     <a href="pages/settings.php" class="dashboardIcon"><img src="img/gear.png" alt="" ></a>
     <a href="pages/achievement.php" class="dashboardIcon"><img src="img/trophy.png" alt="" ></a>
     <a href="" class="dashboardIcon"><img src="img/profile.png" alt="" ></a>
