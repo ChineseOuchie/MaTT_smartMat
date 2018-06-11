@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.4.10
+-- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 11, 2018 at 12:38 PM
--- Server version: 5.6.34-log
--- PHP Version: 7.1.5
+-- Gegenereerd op: 11 jun 2018 om 15:42
+-- Serverversie: 5.5.42
+-- PHP-versie: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,14 +19,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `matt`
 --
-DROP DATABASE IF EXISTS `matt`;
 CREATE DATABASE IF NOT EXISTS `matt` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `matt`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `achievements`
+-- Tabelstructuur voor tabel `achievements`
 --
 
 DROP TABLE IF EXISTS `achievements`;
@@ -42,7 +39,7 @@ CREATE TABLE `achievements` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `danceclasses`
+-- Tabelstructuur voor tabel `danceclasses`
 --
 
 DROP TABLE IF EXISTS `danceclasses`;
@@ -56,17 +53,17 @@ CREATE TABLE `danceclasses` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Tabelstructuur voor tabel `images`
 --
 
 DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `idimages` int(11) NOT NULL,
   `image` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `images`
+-- Gegevens worden geëxporteerd voor tabel `images`
 --
 
 INSERT INTO `images` (`idimages`, `image`) VALUES
@@ -75,7 +72,7 @@ INSERT INTO `images` (`idimages`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logingebruiker`
+-- Tabelstructuur voor tabel `logingebruiker`
 --
 
 DROP TABLE IF EXISTS `logingebruiker`;
@@ -83,12 +80,19 @@ CREATE TABLE `logingebruiker` (
   `idloginGebruiker` int(11) NOT NULL,
   `password` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `logingebruiker`
+--
+
+INSERT INTO `logingebruiker` (`idloginGebruiker`, `password`, `email`) VALUES
+(1, 'kipjes123', 'yoga@matt.nl');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userprofile`
+-- Tabelstructuur voor tabel `userprofile`
 --
 
 DROP TABLE IF EXISTS `userprofile`;
@@ -110,12 +114,19 @@ CREATE TABLE `userprofile` (
   `yogaHalfmoon` int(30) NOT NULL,
   `yogaHatha` int(30) NOT NULL,
   `image` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `userprofile`
+--
+
+INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `sirname`, `age`, `gender`, `weight`, `score`, `achFirstExercise`, `achFirstFinish`, `achTouchZen`, `danBallet`, `danSalsa`, `danStreet`, `yogaEssentials`, `yogaHalfmoon`, `yogaHatha`, `image`) VALUES
+(1, 'Yoga', 'Matt', 28, 'male', 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `yogaclasses`
+-- Tabelstructuur voor tabel `yogaclasses`
 --
 
 DROP TABLE IF EXISTS `yogaclasses`;
@@ -127,80 +138,79 @@ CREATE TABLE `yogaclasses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `achievements`
+-- Indexen voor tabel `achievements`
 --
 ALTER TABLE `achievements`
   ADD PRIMARY KEY (`idachievements`);
 
 --
--- Indexes for table `danceclasses`
+-- Indexen voor tabel `danceclasses`
 --
 ALTER TABLE `danceclasses`
   ADD PRIMARY KEY (`iddanceclasses`);
 
 --
--- Indexes for table `images`
+-- Indexen voor tabel `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`idimages`);
 
 --
--- Indexes for table `logingebruiker`
+-- Indexen voor tabel `logingebruiker`
 --
 ALTER TABLE `logingebruiker`
   ADD PRIMARY KEY (`idloginGebruiker`);
 
 --
--- Indexes for table `userprofile`
+-- Indexen voor tabel `userprofile`
 --
 ALTER TABLE `userprofile`
   ADD PRIMARY KEY (`iduserprofile`);
 
 --
--- Indexes for table `yogaclasses`
+-- Indexen voor tabel `yogaclasses`
 --
 ALTER TABLE `yogaclasses`
   ADD PRIMARY KEY (`idyogaclasses`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `achievements`
+-- AUTO_INCREMENT voor een tabel `achievements`
 --
 ALTER TABLE `achievements`
   MODIFY `idachievements` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `danceclasses`
+-- AUTO_INCREMENT voor een tabel `danceclasses`
 --
 ALTER TABLE `danceclasses`
   MODIFY `iddanceclasses` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT voor een tabel `images`
 --
 ALTER TABLE `images`
-  MODIFY `idimages` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idimages` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `logingebruiker`
+-- AUTO_INCREMENT voor een tabel `logingebruiker`
 --
 ALTER TABLE `logingebruiker`
-  MODIFY `idloginGebruiker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idloginGebruiker` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `userprofile`
+-- AUTO_INCREMENT voor een tabel `userprofile`
 --
 ALTER TABLE `userprofile`
-  MODIFY `iduserprofile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `iduserprofile` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `yogaclasses`
+-- AUTO_INCREMENT voor een tabel `yogaclasses`
 --
 ALTER TABLE `yogaclasses`
-  MODIFY `idyogaclasses` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
-
+  MODIFY `idyogaclasses` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

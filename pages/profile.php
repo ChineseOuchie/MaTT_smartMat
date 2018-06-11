@@ -1,3 +1,23 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    session_start();
+    if (isset($_SESSION['login_user'])){
+        $conn = new mysqli("localhost", "root", "root", "matt");
+        $sql = "SELECT * FROM userprofile WHERE iduserprofile = '{$_SESSION['login_user']}';";
+        $result = $conn->query($sql);
+        $r = "";
+        while ($row = $result->fetch_assoc()){
+            $r .= "<h2>{$row['firstname']} {$row['sirname']} </h2>";
+            $r .= "<h3 class='profileData'>Weight {$row['weight']}kg</h3>";
+            $r .= "<h3 class='profileData'>Age {$row['age']}kg</h3>";
+        }
+    }
+    else{
+        header("location: /pages/login.php");
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +35,9 @@
         <div id="profilecontainer">
             <div id="profilecontent">
                 <img src="../img/profile_img/placeholder.png">
+                <?php
+                    echo $r;
+                ?>
             </div>
         </div>
     </div>
