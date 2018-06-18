@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 session_start();
 
 if (isset($_SESSION['login_user'])){
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $conn = new mysqli("localhost", "root", "root", "matt");
         $sql = "SELECT * FROM logingebruiker WHERE idlogingebruiker = '{$_SESSION['login_user']}';";
         $result = $conn->query($sql);
@@ -20,10 +20,18 @@ if (isset($_SESSION['login_user'])){
                     if ($newpw === $repeatpw){
                         $sqlchangepw = "UPDATE logingebruiker SET password = '$newpw' WHERE idlogingebruiker = {$_SESSION['login_user']};";
                         $resultchangepw = $conn->query($sqlchangepw);
-                        echo $currentpw;
-                        echo $newpw;
-                        echo $repeatpw;
+                        header("location: settings.php");
                     }
+                    else{
+                        $repeatpwerror = "<script type='text/javascript'>alert('Repeat password doesnt match new password');</script>";
+                        echo $repeatpwerror;
+                        header("location: settings.php");
+                    }
+                }
+                else{
+                    $pwerror = "<script type='text/javascript'>alert('Current password is not correct');</script>";
+                    echo $pwerror;
+                    header("location: settings.php");
                 }
             }
         }
@@ -42,7 +50,7 @@ else{
     <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
     <link href="../css/main.css" type="text/css" rel="stylesheet">
     <script src="../js/settings.js"></script>
-    <title>MATT Achievement</title>
+    <title>MATT Settings</title>
 </head>
 <body>
 <div id="container">
