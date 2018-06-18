@@ -11,7 +11,11 @@
         while ($row = $result->fetch_assoc()){
             $r .= "<h2>{$row['firstname']} {$row['sirname']} </h2>";
             $r .= "<h3 class='profileData'>Weight {$row['weight']}kg</h3>";
-            $r .= "<h3 class='profileData'>Age {$row['age']}kg</h3>";
+            $r .= "<h3 class='profileData'>Height {$row['height']}m</h3>";
+            $r .= "<h3 class='profileData'>Exercise routine Daily</h3>";
+            $r .= "<h3 class='profileData'>Prefered exercise Fitness</h3>";
+            $r .= "<h3 class='profileData'>Gender {$row['gender']}</h3>";
+            $r .= "<h3 class='profileData'>Age {$row['age']} years</h3>";
         }
     }
     else{
@@ -31,13 +35,15 @@
         <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
         <a href="settings.php" class="dashboardIcon"><img src="../img/gear.png" alt="" ></a>
         <a href="achievement.php" class="dashboardIcon"><img src="../img/trophy.png" alt="" ></a>
-        <a href="profile.php" class="dashboardIcon"><img src="../img/profile.png" alt="" ></a>
+        <a href="profile.php" class="dashboardIcon"><img src="../img/profileOrange.png" alt="" ></a>
+        <a href="../index.php" class="dashboardIcon"><img src="../img/dashboard.png" alt="Dashboard"></a>
         <div id="profilecontainer">
             <div id="profilecontent">
                 <img src="../img/profile_img/placeholder.png">
                 <?php
                     echo $r;
                 ?>
+                <button>Edit Profile</button>
             </div>
         </div>
     </div>

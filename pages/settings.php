@@ -19,7 +19,7 @@ session_start();
     <a href="../index.php"><img src="../img/logo.png" id="logo"></a>
     <a href="../pages/settings.php" class="dashboardIcon"><img src="../img/settingsOrange.png" alt="" ></a>
     <a href="../pages/achievement.php" class="dashboardIcon"><img src="../img/trophy.png" alt="" ></a>
-    <a href="" class="dashboardIcon"><img src="../img/profile.png" alt="" ></a>
+    <a href="../pages/profile.php" class="dashboardIcon"><img src="../img/profile.png" alt="" ></a>
     <a href="../index.php" class="dashboardIcon"><img src="../img/dashboard.png" alt="Dashboard"></a>
     <div id="settings">
         <h1>Settings</h1>
