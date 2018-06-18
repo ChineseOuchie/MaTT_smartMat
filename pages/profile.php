@@ -6,7 +6,9 @@
     if (isset($_SESSION['login_user'])){
         $conn = new mysqli("localhost", "root", "root", "matt");
         $sql = "SELECT * FROM userprofile WHERE iduserprofile = '{$_SESSION['login_user']}';";
+        $sql2 = "SELECT * FROM logingebruiker WHERE idlogingebruiker = '{$_SESSION['login_user']}';";
         $result = $conn->query($sql);
+        $result2 = $conn->query($sql2);
         $r = "";
         while ($row = $result->fetch_assoc()){
             $r .= "<h2>{$row['firstname']} {$row['sirname']} </h2>";
@@ -16,6 +18,10 @@
             $r .= "<h3 class='profileData'>Prefered exercise {$row['exercisePref']}</h3>";
             $r .= "<h3 class='profileData'>Gender {$row['gender']}</h3>";
             $r .= "<h3 class='profileData'>Age {$row['age']} years</h3>";
+        }
+        $r2 = "";
+        while ($row2 = $result->fetch_assoc()){
+            $r2 .= "<h3 class='profileData'>Email {$row2['email']}</h3>";
         }
     }
     else{
