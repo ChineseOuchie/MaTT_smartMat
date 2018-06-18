@@ -48,6 +48,7 @@
                 <img src="../img/profile_img/placeholder.png">
                 <?php
                     echo $r;
+                    echo $r2;
                 ?>
                 <button>Edit Profile</button>
             </div>
