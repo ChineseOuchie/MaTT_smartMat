@@ -3,6 +3,36 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
+
+if (isset($_SESSION['login_user'])){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $conn = new mysqli("localhost", "root", "root", "matt");
+        $sql = "SELECT * FROM logingebruiker WHERE idlogingebruiker = '{$_SESSION['login_user']}';";
+        $result = $conn->query($sql);
+
+        $currentpw = $_POST['currentpw'];
+        $newpw = $_POST['newpw'];
+        $repeatpw = $_POST['repeatpw'];
+
+        while ($row = $result->fetch_assoc()){
+            if (isset($_POST['submit'])){
+                if ($currentpw === $row['password']){
+                    if ($newpw === $repeatpw){
+                        $sqlchangepw = "UPDATE logingebruiker SET password = '$newpw' WHERE idlogingebruiker = {$_SESSION['login_user']};";
+                        $resultchangepw = $conn->query($sqlchangepw);
+                        echo $currentpw;
+                        echo $newpw;
+                        echo $repeatpw;
+                    }
+                }
+            }
+        }
+    }
+}
+else{
+    header("location: /pages/login.php");
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,11 +90,11 @@ session_start();
                     that we send you to indicate that you no longer wish to receive our direct marketing material
                 </div>
                 <div id="changePassword" class="info">
-                    <form>
-                        <input type="password" class="changePassword" id="oldPassword" placeholder="Current password">
-                        <input type="password" class="changePassword" id="newPassword" placeholder="New password">
-                        <input type="password" class="changePassword" id="repeatNewPassword" placeholder="Repeat new password">
-                        <input type="submit" name= "submit" id="changeSubmit" placeholder="Submit">
+                    <form method="post">
+                        <input type="password" class="changePassword" id="oldPassword" name="currentpw" placeholder="Current password">
+                        <input type="password" class="changePassword" id="newPassword" name="newpw" placeholder="New password">
+                        <input type="password" class="changePassword" id="repeatNewPassword" name="repeatpw" placeholder="Repeat new password">
+                        <input type="submit" name="submit" id="changeSubmit" placeholder="Submit">
                     </form>
                 </div>
                 <div id="language" class="info">
