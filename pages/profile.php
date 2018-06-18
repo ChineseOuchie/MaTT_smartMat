@@ -12,8 +12,8 @@
             $r .= "<h2>{$row['firstname']} {$row['sirname']} </h2>";
             $r .= "<h3 class='profileData'>Weight {$row['weight']}kg</h3>";
             $r .= "<h3 class='profileData'>Height {$row['height']}m</h3>";
-            $r .= "<h3 class='profileData'>Exercise routine Daily</h3>";
-            $r .= "<h3 class='profileData'>Prefered exercise Fitness</h3>";
+            $r .= "<h3 class='profileData'>Exercise routine {$row['exerciseRout']}</h3>";
+            $r .= "<h3 class='profileData'>Prefered exercise {$row['exercisePref']}</h3>";
             $r .= "<h3 class='profileData'>Gender {$row['gender']}</h3>";
             $r .= "<h3 class='profileData'>Age {$row['age']} years</h3>";
         }

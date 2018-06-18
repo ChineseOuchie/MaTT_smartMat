@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Gegenereerd op: 18 jun 2018 om 11:39
+-- Gegenereerd op: 18 jun 2018 om 11:47
 -- Serverversie: 5.5.42
 -- PHP-versie: 7.0.8
 
@@ -104,7 +104,7 @@ CREATE TABLE `userprofile` (
   `age` int(11) NOT NULL,
   `gender` varchar(15) NOT NULL,
   `weight` int(11) NOT NULL,
-  `height` int(5) NOT NULL,
+  `height` float NOT NULL,
   `exercisePref` varchar(30) NOT NULL,
   `exerciseRout` varchar(30) NOT NULL,
   `score` int(30) NOT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `userprofile` (
 --
 
 INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `sirname`, `age`, `gender`, `weight`, `height`, `exercisePref`, `exerciseRout`, `score`, `achFirstExercise`, `achFirstFinish`, `achTouchZen`, `danBallet`, `danSalsa`, `danStreet`, `yogaEssentials`, `yogaHalfmoon`, `yogaHatha`, `image`) VALUES
-(1, 'Yoga', 'Matt', 28, 'male', 83, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
+(1, 'Yoga', 'Matt', 28, 'male', 83, 1.8, 'Fitness', 'Daily', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
