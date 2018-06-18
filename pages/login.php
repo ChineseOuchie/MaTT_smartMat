@@ -8,15 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['submit'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
-
         $sql = "SELECT idloginGebruiker FROM loginGebruiker WHERE email = '$email' and password = '$password';";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $id = $row['idloginGebruiker'];
-
-
         $count = $result->num_rows;
-
         if($count == 1) {
             $_SESSION['login_user'] = $id;
             header("location: ../index.php");

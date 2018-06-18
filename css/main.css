@@ -524,21 +524,32 @@ hr{
     text-decoration: none;
     cursor: pointer;
 }
-
-
 @media (max-width: 1250px) {
     #workout{
         margin-left: 116px;
         margin-right: 116px;
     }
 }
-
 @media (max-width: 840px) {
-    #health, #goal{
-        margin-left: 116px;
-        margin-right: 116px;
+    #logo{
+        height: 140px;
+        padding-left: 53px;
+    }
+    #health, #goal, #workout{
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .dashboardIcon{
         display: none;
+    }
+    .workout > img, .health > img{
+        height: 90px;
+    }
+    #achievement{
+        margin: 0 10px ;
+    }
+    #achievementItems{
+        display: block;
+
     }
 }
