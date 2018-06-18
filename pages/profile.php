@@ -9,19 +9,20 @@
         $sql2 = "SELECT * FROM logingebruiker WHERE idlogingebruiker = '{$_SESSION['login_user']}';";
         $result = $conn->query($sql);
         $result2 = $conn->query($sql2);
-        $r = "";
+        $rleft = "";
+        $rright = "";
         while ($row = $result->fetch_assoc()){
-            $r .= "<h2>{$row['firstname']} {$row['sirname']} </h2>";
-            $r .= "<h3 class='profileData'>Weight {$row['weight']}kg</h3>";
-            $r .= "<h3 class='profileData'>Height {$row['height']}m</h3>";
-            $r .= "<h3 class='profileData'>Exercise routine {$row['exerciseRout']}</h3>";
-            $r .= "<h3 class='profileData'>Prefered exercise {$row['exercisePref']}</h3>";
-            $r .= "<h3 class='profileData'>Gender {$row['gender']}</h3>";
-            $r .= "<h3 class='profileData'>Age {$row['age']} years</h3>";
+            $rleft .= "<h2>{$row['firstname']} {$row['sirname']} </h2>";
+            $rleft .= "<h3 class='profileData'>Weight {$row['weight']}kg</h3>";
+            $rleft .= "<h3 class='profileData'>Height {$row['height']}m</h3>";
+            $rright .= "<h3 class='profileData'>Exercise routine <span class='output'>{$row['exerciseRout']}</span></h3>";
+            $rright .= "<h3 class='profileData'>Prefered exercise <span class='output'>{$row['exercisePref']}</span></h3>";
+            $rright .= "<h3 class='profileData'>Gender <span class='output'>{$row['gender']}</span></h3>";
+            $rright .= "<h3 class='profileData'>Age <span class='output'>{$row['age']} years</span></h3>";
         }
-        $r2 = "";
-        while ($row2 = $result->fetch_assoc()){
-            $r2 .= "<h3 class='profileData'>Email {$row2['email']}</h3>";
+        while ($row2 = $result2->fetch_assoc()){
+            $rright .= "<h3 class='profileData'><span class='profileEmail'>Email {$row2['email']}</span></h3>";
+
         }
     }
     else{
@@ -45,11 +46,20 @@
         <a href="../index.php" class="dashboardIcon"><img src="../img/dashboard.png" alt="Dashboard"></a>
         <div id="profilecontainer">
             <div id="profilecontent">
-                <img src="../img/profile_img/placeholder.png">
-                <?php
-                    echo $r;
-                ?>
-                <button>Edit Profile</button>
+                <div id="profileLeft">
+                    <img src="../img/profile_img/placeholder.png">
+                    <?php
+                        echo $rleft;
+                    ?>
+                </div>
+                <div id="profileRight">
+                    <?php
+                        echo $rright;
+                    ?>
+                    <div class="profileButton">
+                        <button>Edit Profile</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
