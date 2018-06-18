@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Gegenereerd op: 11 jun 2018 om 15:42
+-- Gegenereerd op: 18 jun 2018 om 11:39
 -- Serverversie: 5.5.42
 -- PHP-versie: 7.0.8
 
@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `matt`
 --
+DROP DATABASE `matt`;
 CREATE DATABASE IF NOT EXISTS `matt` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `matt`;
 
@@ -103,6 +104,9 @@ CREATE TABLE `userprofile` (
   `age` int(11) NOT NULL,
   `gender` varchar(15) NOT NULL,
   `weight` int(11) NOT NULL,
+  `height` int(5) NOT NULL,
+  `exercisePref` varchar(30) NOT NULL,
+  `exerciseRout` varchar(30) NOT NULL,
   `score` int(30) NOT NULL,
   `achFirstExercise` int(30) NOT NULL,
   `achFirstFinish` int(30) NOT NULL,
@@ -120,8 +124,8 @@ CREATE TABLE `userprofile` (
 -- Gegevens worden geëxporteerd voor tabel `userprofile`
 --
 
-INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `sirname`, `age`, `gender`, `weight`, `score`, `achFirstExercise`, `achFirstFinish`, `achTouchZen`, `danBallet`, `danSalsa`, `danStreet`, `yogaEssentials`, `yogaHalfmoon`, `yogaHatha`, `image`) VALUES
-(1, 'Yoga', 'Matt', 28, 'male', 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
+INSERT INTO `userprofile` (`iduserprofile`, `firstname`, `sirname`, `age`, `gender`, `weight`, `height`, `exercisePref`, `exerciseRout`, `score`, `achFirstExercise`, `achFirstFinish`, `achTouchZen`, `danBallet`, `danSalsa`, `danStreet`, `yogaEssentials`, `yogaHalfmoon`, `yogaHatha`, `image`) VALUES
+(1, 'Yoga', 'Matt', 28, 'male', 83, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
